@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+             Case 3
+        </title>
+    </head>
+    <body>
+        <script>
+            'use strict'
+            /**
+             * Возвращает положение первого встреченного в массиве числа совпадающего с искомым
+             * Если такого числа нет в массиве возвращает -1
+             * @param {array} inputArray - Массив чисел
+             * @param {number} value - Искомое число
+             * @returns {number} Индекс числа в массиве
+             */
+            function findIndex (inputArray, value) {
+                let index = 0;
+                for (let item of inputArray) {
+                    if (item === value){
+                        return index;
+                    }
+                    index++;
+                }
+                return -1;
+            };
+
+            const preparedArray = [];
+            const rawArray = prompt('Введите массив чисел, разделенных пробелами').split(' ');
+            rawArray.forEach(element => {
+                preparedArray.push(Number(element));
+            });
+
+            const valueForSearch = +prompt('Введите число, которое нужно отыскать');
+
+
+            alert(`Результат поиска № индекса : ${findIndex(preparedArray, valueForSearch)}`);
+
+        </script>
+    </body>
+</html>
